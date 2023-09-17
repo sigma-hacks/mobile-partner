@@ -45,9 +45,54 @@ class ClientPage extends StatelessWidget {
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                           const Divider(color: AppColors.blueLight),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 8),
                           ClientCard(
                             passenger: client!,
+                          ),
+                          const SizedBox(height: 8),
+                          const Divider(
+                            color: AppColors.blueLight,
+                            indent: 20,
+                            endIndent: 20,
+                          ),
+                          Text(
+                            'Доступные скидки',
+                            style: Theme.of(context).textTheme.titleSmall,
+                          ),
+                          const Divider(
+                            color: AppColors.blueLight,
+                            indent: 20,
+                            endIndent: 20,
+                          ),
+                          Expanded(
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: List.generate(
+                                  20,
+                                  (index) => index % 2 == 0
+                                      ? ListTile(
+                                          title: Text('Вкусный понедельник'),
+                                          subtitle: Text('только сегодня'),
+                                          trailing: Text(
+                                            '5%',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleSmall,
+                                          ),
+                                        )
+                                      : ListTile(
+                                          title: Text('Бабье лето'),
+                                          subtitle: Text('до 25.09.2023'),
+                                          trailing: Text(
+                                            '15%',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleSmall,
+                                          ),
+                                        ),
+                                ),
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 12),
                           SizedBox(
