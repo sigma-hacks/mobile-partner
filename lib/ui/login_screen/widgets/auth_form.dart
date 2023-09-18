@@ -45,6 +45,11 @@ class _AuthFormState extends State<AuthForm> {
           const SizedBox(height: 8),
           TextFormField(
             controller: loginController,
+            keyboardType: TextInputType.emailAddress,
+            textInputAction: TextInputAction.next,
+            onTapOutside: (event) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Введите логин';
@@ -58,6 +63,10 @@ class _AuthFormState extends State<AuthForm> {
           TextFormField(
             obscureText: true,
             controller: passwordController,
+            textInputAction: TextInputAction.done,
+            onTapOutside: (event) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Введите пароль';

@@ -14,6 +14,7 @@ ThemeData themeLight = _themeLight.copyWith(
   appBarTheme: _appBarLight(_themeLight.appBarTheme),
   bottomAppBarTheme: _bottomAppBarLight(_themeLight.bottomAppBarTheme),
   inputDecorationTheme: _inputDecorLight(_themeLight.inputDecorationTheme),
+  chipTheme: _chipLight(_themeLight.chipTheme),
 );
 
 ColorScheme _schemeLight(ColorScheme base) {
@@ -140,6 +141,24 @@ InputDecorationTheme _inputDecorLight(InputDecorationTheme base) {
     border: OutlineInputBorder(
       borderSide: BorderSide.none,
       borderRadius: BorderRadius.circular(10),
+    ),
+    hintStyle: TextStyle(fontWeight: FontWeight.normal),
+  );
+}
+
+ChipThemeData _chipLight(ChipThemeData base) {
+  return base.copyWith(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+    side: BorderSide.none,
+    showCheckmark: false,
+    padding: const EdgeInsets.all(8),
+    backgroundColor: MaterialStateColor.resolveWith(
+      (Set<MaterialState> states) => states.contains(MaterialState.selected)
+          ? AppColors.blueLight
+          : AppColors.greyLight,
+    ),
+    labelStyle: TextStyle(
+      color: AppColors.black,
     ),
   );
 }

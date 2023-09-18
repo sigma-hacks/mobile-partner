@@ -60,7 +60,7 @@ class _QrPageState extends State<QrPage> {
         result = scanData;
 
         controller.pauseCamera();
-        context.goNamed(RouteName.passenger);
+        context.goNamed(RouteName.client);
       });
     });
   }

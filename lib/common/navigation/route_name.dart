@@ -4,5 +4,6 @@ class RouteName {
   // static const String pay = '/pay';
   // static const String check = '/check';
   static const String qr = 'qr';
-  static const String passenger = '/passenger';
+  static const String client = '/client';
+  static const String sales = '/sales';
 }
