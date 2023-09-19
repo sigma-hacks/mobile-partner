@@ -44,7 +44,7 @@ final GoRouter router = GoRouter(
       name: RouteName.sales,
       path: '${RouteName.base}${RouteName.sales}',
       builder: (BuildContext context, GoRouterState state) {
-        return const SalesPage();
+        return SalesPage();
       },
     ),
   ],

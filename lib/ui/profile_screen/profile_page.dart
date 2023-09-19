@@ -35,7 +35,12 @@ class ProfilePage extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
-            MenuItem(text: 'Акции и скидки'),
+            MenuItem(
+              text: 'Акции и скидки',
+              onTap: () {
+                context.pushNamed(RouteName.sales);
+              },
+            ),
             MenuItem(text: 'Статистика'),
             MenuItem(text: 'Обращения и жалобы'),
             MenuItem(text: 'О приложении'),

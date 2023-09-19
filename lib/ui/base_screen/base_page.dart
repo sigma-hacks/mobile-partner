@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../common/theme/app_colors.dart';
-import '../../cubits/ui_cubit.dart';
+import '../../cubits/ui_cubit/app_state.dart';
+import '../../cubits/ui_cubit/ui_cubit.dart';
 import '../../models/app_tabs.dart';
-import '../../models/state/app_state.dart';
 import '../main_screen/main_page.dart';
 import '../profile_screen/profile_page.dart';
 import 'widgets/qr_button.dart';

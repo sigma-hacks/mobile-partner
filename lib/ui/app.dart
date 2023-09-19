@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../common/navigation/router.dart';
 import '../common/theme/light_theme.dart';
-import '../cubits/ui_cubit.dart';
+import '../cubits/sales_cubit.dart/sales_cubit.dart';
+import '../cubits/ui_cubit/ui_cubit.dart';
 import '../services/reachability_service.dart';
 
 class App extends StatelessWidget {
@@ -15,6 +16,9 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider<UiCubit>(
           create: (_) => UiCubit(ReachabilityService())..listenToConnectivity(),
+        ),
+        BlocProvider<SalesCubit>(
+          create: (_) => SalesCubit(),
         ),
       ],
       child: MaterialApp.router(

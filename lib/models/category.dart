@@ -6,6 +6,7 @@ enum Category {
   social,
   morning,
   pensioner,
+  none,
 }
 
 String categotyName(Category category) {

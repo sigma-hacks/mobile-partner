@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
-import '../models/app_tabs.dart';
-import '../models/state/app_state.dart';
-import '../services/reachability_service.dart';
+import '../../models/app_tabs.dart';
+import '../../services/reachability_service.dart';
+import 'app_state.dart';
 
 class UiCubit extends Cubit<AppState> {
   UiCubit(this.repo) : super(const AppState());

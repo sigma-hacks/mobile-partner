@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../common/navigation/route_name.dart';
 import '../../common/theme/app_colors.dart';
-import '../../cubits/ui_cubit.dart';
-import '../../models/state/app_state.dart';
+import '../../cubits/ui_cubit/app_state.dart';
+import '../../cubits/ui_cubit/ui_cubit.dart';
 import '../common/out_button.dart';
 import 'widgets/function_off.dart';
 import 'widgets/nfc_instruction.dart';

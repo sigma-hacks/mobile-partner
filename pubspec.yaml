@@ -38,7 +38,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/logo_partner.jpg"
+  image_path: "assets/images/logo_par.png"
   min_sdk_android: 24
 
 
