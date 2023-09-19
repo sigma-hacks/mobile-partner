@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 
 import '../../common/navigation/route_name.dart';
 import '../../common/theme/app_colors.dart';
+import '../../data/mok.dart';
 import '../../models/client.dart';
 import '../common/out_button.dart';
 import '../common/client_card.dart';
@@ -67,30 +69,19 @@ class ClientPage extends StatelessWidget {
                           Expanded(
                             child: SingleChildScrollView(
                               child: Column(
-                                children: List.generate(
-                                  20,
-                                  (index) => index % 2 == 0
-                                      ? ListTile(
-                                          title: Text('Вкусный понедельник'),
-                                          subtitle: Text('только сегодня'),
+                                children: sales
+                                    .map((e) => ListTile(
+                                          title: Text(e.name),
+                                          subtitle: Text(
+                                              'до ${DateFormat('dd.MM.yyyy').format(e.finishDate)}'),
                                           trailing: Text(
-                                            '5%',
+                                            '${e.sale}%',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .titleSmall,
                                           ),
-                                        )
-                                      : ListTile(
-                                          title: Text('Бабье лето'),
-                                          subtitle: Text('до 25.09.2023'),
-                                          trailing: Text(
-                                            '15%',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleSmall,
-                                          ),
-                                        ),
-                                ),
+                                        ))
+                                    .toList(),
                               ),
                             ),
                           ),
@@ -110,7 +101,12 @@ class ClientPage extends StatelessWidget {
                               contentColor: AppColors.error,
                               fillColor: AppColors.white,
                               text: 'Сообщить о неточности',
-                              onTap: () {}),
+                              onTap: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        behavior: SnackBarBehavior.floating,
+                                        content: Text('Функция в разработке')));
+                              }),
                         ],
                       ),
                     );

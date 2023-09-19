@@ -9,5 +9,6 @@ class AppState with _$AppState {
   const factory AppState({
     @Default(AppTabs.main) AppTabs currentTab,
     @Default(true) bool isConnection,
+    @Default(false) bool isAuthorized,
   }) = _AppState;
 }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../common/navigation/router.dart';
 import '../common/theme/light_theme.dart';
+import '../cubits/pin_auth_cubit/pin_auth_cubit.dart';
 import '../cubits/sales_cubit.dart/sales_cubit.dart';
 import '../cubits/app_cubit/app_cubit.dart';
 import '../services/reachability_service.dart';
@@ -20,6 +21,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider<SalesCubit>(
           create: (_) => SalesCubit(),
+        ),
+        BlocProvider<PinAuthCubit>(
+          create: (_) => PinAuthCubit(),
         ),
       ],
       child: MaterialApp.router(

@@ -29,6 +29,6 @@ class SalesCubit extends Cubit<SalesState> {
       return title.contains(search);
     }).toList();
     emit(state.copyWith(
-        filterSales: filteredSales, currentFilter: state.currentFilter));
+        filterSales: filteredSales, currentFilter: Category.none));
   }
 }

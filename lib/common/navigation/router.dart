@@ -5,6 +5,7 @@ import '../../data/mok.dart';
 import '../../ui/base_screen/base_page.dart';
 import '../../ui/login_screen/login_page.dart';
 import '../../ui/client_screen/client_page.dart';
+import '../../ui/login_screen/pin_page.dart';
 import '../../ui/qr_screen/qr_page.dart';
 import '../../ui/sales_screen/sales_page.dart';
 import 'route_name.dart';
@@ -17,6 +18,13 @@ final GoRouter router = GoRouter(
       path: RouteName.login,
       builder: (BuildContext context, GoRouterState state) {
         return const LoginPage();
+      },
+    ),
+    GoRoute(
+      name: RouteName.pin,
+      path: '${RouteName.login}${RouteName.pin}',
+      builder: (BuildContext context, GoRouterState state) {
+        return const PinPage();
       },
     ),
     GoRoute(

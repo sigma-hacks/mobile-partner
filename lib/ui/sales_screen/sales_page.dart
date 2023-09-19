@@ -2,6 +2,7 @@ import 'package:ekzh_partner/models/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../common/theme/app_colors.dart';
 import '../../cubits/sales_cubit.dart/sales_cubit.dart';
 import '../../cubits/sales_cubit.dart/sales_state.dart';
 import 'widgets/category_widget.dart';
@@ -26,14 +27,21 @@ class SalesPage extends StatelessWidget {
                 child: TextField(
                   controller: controller,
                   textInputAction: TextInputAction.search,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(horizontal: 16),
-                      suffixIcon: Icon(
+                      hintStyle: Theme.of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(color: AppColors.greyDark),
+                      suffixIcon: const Icon(
                         Icons.search,
                         size: 28,
                       ),
                       hintText: 'Искать акцию'),
                   onChanged: BlocProvider.of<SalesCubit>(context).search,
+                  onTapOutside: (event) {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
                 ),
               ),
               const SizedBox(height: 12),
@@ -43,7 +51,7 @@ class SalesPage extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return index == 0 || index == Category.values.length
-                          ? const SizedBox(width: 16)
+                          ? const SizedBox(width: 12)
                           : CategoryWidget(
                               category: Category.values[index - 1],
                               isSelect: state.currentFilter ==

@@ -16,6 +16,14 @@ class AppCubit extends Cubit<AppState> {
     emit(state.copyWith(currentTab: newTab));
   }
 
+  void login() {
+    emit(state.copyWith(isAuthorized: true));
+  }
+
+  void logout() {
+    emit(state.copyWith(isAuthorized: false));
+  }
+
   Future<void> listenToConnectivity() async {
     repo.onStatusChange.listen((result) {
       if (result == InternetStatus.connected) {

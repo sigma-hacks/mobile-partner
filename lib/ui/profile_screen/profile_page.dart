@@ -42,9 +42,27 @@ class ProfilePage extends StatelessWidget {
                 context.pushNamed(RouteName.sales);
               },
             ),
-            MenuItem(text: 'Статистика'),
-            MenuItem(text: 'Обращения и жалобы'),
-            MenuItem(text: 'О приложении'),
+            MenuItem(
+                text: 'Статистика',
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      behavior: SnackBarBehavior.floating,
+                      content: Text('Функция в разработке')));
+                }),
+            MenuItem(
+                text: 'Обращения и жалобы',
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      behavior: SnackBarBehavior.floating,
+                      content: Text('Функция в разработке')));
+                }),
+            MenuItem(
+                text: 'О приложении',
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      behavior: SnackBarBehavior.floating,
+                      content: Text('Функция в разработке')));
+                }),
             TextButton(
               onPressed: () {
                 NfcManager.instance.stopSession();
@@ -52,6 +70,7 @@ class ProfilePage extends StatelessWidget {
               },
               child: const Text('Выйти'),
             ),
+            const SizedBox(height: 48),
           ],
         ),
       ),

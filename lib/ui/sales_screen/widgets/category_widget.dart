@@ -41,6 +41,7 @@ class CategoryWidget extends StatelessWidget {
           child: Text(
             categotyName(category),
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontSize: 18,
                   color: isSelect ? AppColors.greenDark : AppColors.greyDark,
                 ),
           ),
