@@ -27,7 +27,7 @@ class Way extends StatelessWidget {
             ],
           ),
         ),
-        Icon(
+        const Icon(
           Icons.keyboard_double_arrow_right_rounded,
           color: AppColors.blue,
         ),

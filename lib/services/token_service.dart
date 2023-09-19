@@ -17,7 +17,7 @@ class TokenService {
   }
 
   String? _token;
-  SecureStorageService _service = SecureStorageService();
+  final SecureStorageService _service = SecureStorageService();
 
   Future<String?> getToken() async {
     if (_token != null) {

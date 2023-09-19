@@ -33,8 +33,8 @@ class BasePage extends StatelessWidget {
         return Scaffold(
           body: SafeArea(
               child: state.currentTab == AppTabs.main
-                  ? MainPage()
-                  : ProfilePage()),
+                  ? const MainPage()
+                  : const ProfilePage()),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: const QRButton(),

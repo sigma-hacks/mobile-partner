@@ -28,7 +28,8 @@ class SalesPage extends StatelessWidget {
                   controller: controller,
                   textInputAction: TextInputAction.search,
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 16),
                       hintStyle: Theme.of(context)
                           .textTheme
                           .bodyLarge!

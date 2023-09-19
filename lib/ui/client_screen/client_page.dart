@@ -92,7 +92,7 @@ class ClientPage extends StatelessWidget {
                               onPressed: () {
                                 context.goNamed(RouteName.base);
                               },
-                              child: Text('Скидка предоставлена'),
+                              child: const Text('Скидка предоставлена'),
                             ),
                           ),
                           const SizedBox(height: 12),

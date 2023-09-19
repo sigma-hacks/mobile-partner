@@ -1,16 +1,15 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorageService {
- 
-
-  static final SecureStorageService _instance = SecureStorageService._internal();
+  static final SecureStorageService _instance =
+      SecureStorageService._internal();
 
   final String _key = "EncryptionKey";
   final String _tokenKey = "TokenKey";
 // Create storage
-  final FlutterSecureStorage storage = FlutterSecureStorage(aOptions: AndroidOptions(encryptedSharedPreferences: true));
+  final FlutterSecureStorage storage = const FlutterSecureStorage(
+      aOptions: AndroidOptions(encryptedSharedPreferences: true));
 
-  
 // // Read value
 // String value = await storage.read(key: key);
 
@@ -30,7 +29,7 @@ class SecureStorageService {
   }
 
   SecureStorageService._internal() {
-      // init logic
+    // init logic
   }
 
   // MARK: - Crypto Key
@@ -56,12 +55,10 @@ class SecureStorageService {
   }
 
   Future<String?> getToken() async {
-    return await storage.read(key: _tokenKey);  
+    return await storage.read(key: _tokenKey);
   }
 
   Future<void> removeToken() async {
     return await storage.delete(key: _tokenKey);
   }
-
 }
-

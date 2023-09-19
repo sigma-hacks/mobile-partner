@@ -18,11 +18,11 @@ class FunctionOff extends StatelessWidget {
           'assets/icons/warning.svg',
           color: AppColors.error,
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Expanded(
             child: Text(
           text,
-          style: TextStyle(color: AppColors.error),
+          style: const TextStyle(color: AppColors.error),
         )),
       ],
     );

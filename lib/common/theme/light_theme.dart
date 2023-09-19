@@ -19,10 +19,6 @@ ThemeData themeLight = _themeLight.copyWith(
 
 ColorScheme _schemeLight(ColorScheme base) {
   return base.copyWith(
-    // secondaryContainer: AppColors.white,
-    // tertiaryContainer: AppColors.greyLighter,
-    // onTertiary: AppColors.textSecondary,
-    // background: AppColors.greyLight,
     primary: AppColors.blue,
     error: AppColors.error,
   );
@@ -63,25 +59,12 @@ TextTheme _textLight(TextTheme base) {
       color: AppColors.blue,
       // fontFamily: 'SF',
     ),
-    // labelMedium: base.labelMedium!.copyWith(
-    //   fontSize: 14,
-    //   fontWeight: FontWeight.w500,
-    //   height: 16.8 / 14,
-    //   color: AppColors.textSecondary,
-    //   fontFamily: 'SF',
-    // ),
-    // labelLarge: base.labelLarge!.copyWith(
-    //   fontSize: 16,
-    //   height: 17.6 / 16,
-    //   fontFamily: 'SF',
-    //   letterSpacing: 0.75,
-    // ),
   );
 }
 
 ButtonStyle _elevButtonLight = ElevatedButton.styleFrom(
-  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-  textStyle: TextStyle(fontSize: 18),
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+  textStyle: const TextStyle(fontSize: 18),
   backgroundColor: AppColors.blue,
   foregroundColor: AppColors.white,
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -93,9 +76,9 @@ ButtonStyle _textButtonLight = TextButton.styleFrom(
 );
 
 ButtonStyle _outlinedButtonLight = OutlinedButton.styleFrom(
-  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-  textStyle: TextStyle(fontSize: 18),
-  shape: StadiumBorder(side: BorderSide(color: AppColors.blue, width: 2)),
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+  textStyle: const TextStyle(fontSize: 18),
+  shape: const StadiumBorder(side: BorderSide(color: AppColors.blue, width: 2)),
 );
 
 AppBarTheme _appBarLight(AppBarTheme base) {
@@ -142,7 +125,7 @@ InputDecorationTheme _inputDecorLight(InputDecorationTheme base) {
       borderSide: BorderSide.none,
       borderRadius: BorderRadius.circular(10),
     ),
-    hintStyle: TextStyle(fontWeight: FontWeight.normal),
+    hintStyle: const TextStyle(fontWeight: FontWeight.normal),
   );
 }
 
@@ -157,8 +140,6 @@ ChipThemeData _chipLight(ChipThemeData base) {
           ? AppColors.blueLight
           : AppColors.greyLight,
     ),
-    labelStyle: TextStyle(
-      color: AppColors.black,
-    ),
+    labelStyle: const TextStyle(color: AppColors.black),
   );
 }
