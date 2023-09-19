@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../common/theme/app_colors.dart';
-import '../../cubits/ui_cubit/app_state.dart';
-import '../../cubits/ui_cubit/ui_cubit.dart';
+import '../../cubits/app_cubit/app_state.dart';
+import '../../cubits/app_cubit/app_cubit.dart';
 import '../../models/app_tabs.dart';
 import '../main_screen/main_page.dart';
 import '../profile_screen/profile_page.dart';
@@ -27,7 +27,7 @@ class BasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UiCubit, AppState>(
+    return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
         int currentIndex = AppTabs.values.indexOf(state.currentTab);
         return Scaffold(
@@ -47,7 +47,7 @@ class BasePage extends StatelessWidget {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        BlocProvider.of<UiCubit>(context)
+                        BlocProvider.of<AppCubit>(context)
                             .updateTab(AppTabs.main);
                       },
                       child: Column(
@@ -77,7 +77,7 @@ class BasePage extends StatelessWidget {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        BlocProvider.of<UiCubit>(context)
+                        BlocProvider.of<AppCubit>(context)
                             .updateTab(AppTabs.profile);
                       },
                       child: Column(

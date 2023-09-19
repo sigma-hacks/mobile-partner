@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../common/navigation/route_name.dart';
 import '../../../common/theme/app_colors.dart';
-import '../../../cubits/ui_cubit/ui_cubit.dart';
+import '../../../cubits/app_cubit/app_cubit.dart';
 import '../../../models/app_tabs.dart';
 import '../../common/out_button.dart';
 
@@ -81,7 +81,7 @@ class _AuthFormState extends State<AuthForm> {
             text: 'Войти',
             onTap: () {
               if (formKey.currentState!.validate()) {
-                BlocProvider.of<UiCubit>(context).updateTab(AppTabs.main);
+                BlocProvider.of<AppCubit>(context).updateTab(AppTabs.main);
                 context.goNamed(RouteName.base);
               }
             },

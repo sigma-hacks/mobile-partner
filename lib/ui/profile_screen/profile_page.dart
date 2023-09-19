@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nfc_manager/nfc_manager.dart';
 
 import '../../common/navigation/route_name.dart';
 import '../../common/theme/app_colors.dart';
@@ -46,6 +47,7 @@ class ProfilePage extends StatelessWidget {
             MenuItem(text: 'О приложении'),
             TextButton(
               onPressed: () {
+                NfcManager.instance.stopSession();
                 context.goNamed(RouteName.login);
               },
               child: const Text('Выйти'),

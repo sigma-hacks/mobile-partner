@@ -7,8 +7,8 @@ import '../../models/app_tabs.dart';
 import '../../services/reachability_service.dart';
 import 'app_state.dart';
 
-class UiCubit extends Cubit<AppState> {
-  UiCubit(this.repo) : super(const AppState());
+class AppCubit extends Cubit<AppState> {
+  AppCubit(this.repo) : super(const AppState());
 
   final ReachabilityService repo;
 
