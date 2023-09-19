@@ -8,6 +8,11 @@
     + по QR-кодy карты ЕКЖ
     + с помощью считывания чипа карты ЕКЖ средствами NFC
 * просмотр действующих скидок по карте ЕКЖ данного партнёра с фильтрацией и поиском
+    <details> 
+        <summary>Подробнее</summary>
+            <img src="assets\screenshort\part_readme.gif" height=500 width=200>
+        </details>
+
 
 ## Сборка приложения
 Перед началось запуска/сборки проекта запустите команду:
@@ -31,7 +36,15 @@ flutter build apk --split-per-abi
 * app-x86_64-release.apk
 
 ## Приложение
-[Ссылка на APK](https://github.com/sigma-hacks/mobile/releases/tag/v1)
+##### PIN-код для входа по служебной карте 
+```
+2121
+```
+[Ссылка на демонстрацию работы](https://drive.google.com/file/d/1PjJpdnyfpePBJ9mzpnK_zMeX6EefZuaV/view?usp=sharing)
+
+[Ссылка на APK](https://github.com/sigma-hacks/mobile-partner/releases/tag/v1)
+
+
 
 ## Разработчики
 Пелагейчева Мария | mobile | [Телеграм](https://t.me/MariyaViktorovna)
